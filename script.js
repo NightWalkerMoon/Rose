@@ -1,6 +1,57 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // =================================
+    // МОБИЛЬНАЯ ПАНЕЛЬ
+    // =================================
+
+    const sidebar = document.querySelector(".sidebar");
+
+    const sidebarToggle = document.createElement("button");
+
+    sidebarToggle.className = "sidebar-toggle";
+
+    sidebarToggle.type = "button";
+
+    sidebarToggle.setAttribute(
+        "aria-label",
+        "Открыть панель навигации"
+    );
+
+    sidebarToggle.textContent = "☰";
+
+    document.body.appendChild(sidebarToggle);
+
+
+    function toggleSidebar() {
+
+        const isOpen = sidebar.classList.toggle("mobile-open");
+
+        sidebarToggle.classList.toggle("active", isOpen);
+
+        if (isOpen) {
+
+            sidebarToggle.textContent = "✕";
+
+            sidebarToggle.setAttribute(
+                "aria-label",
+                "Закрыть панель навигации"
+            );
+
+        } else {
+
+            sidebarToggle.textContent = "☰";
+
+            sidebarToggle.setAttribute(
+                "aria-label",
+                "Открыть панель навигации"
+            );
+        }
+    }
+
+
+    sidebarToggle.addEventListener("click", toggleSidebar);
+
+    // =================================
     // УНИВЕРСАЛЬНАЯ СИСТЕМА МОДАЛЬНЫХ ОКОН
     // =================================
 
