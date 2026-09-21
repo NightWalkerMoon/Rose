@@ -1,55 +1,44 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // =================================
-    // МОБИЛЬНАЯ ПАНЕЛЬ
+    // КНОПКА СКРЫТИЯ САЙДБАРА
     // =================================
 
     const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebar-toggle");
 
-    const sidebarToggle = document.createElement("button");
+    if (sidebar && sidebarToggle) {
 
-    sidebarToggle.className = "sidebar-toggle";
+        sidebarToggle.addEventListener("click", function () {
 
-    sidebarToggle.type = "button";
+            const isHidden = sidebar.classList.toggle("hidden");
 
-    sidebarToggle.setAttribute(
-        "aria-label",
-        "Открыть панель навигации"
-    );
+            if (isHidden) {
 
-    sidebarToggle.textContent = "☰";
+                sidebarToggle.classList.add("sidebar-hidden");
 
-    document.body.appendChild(sidebarToggle);
+                sidebarToggle.textContent = "☰";
 
+                sidebarToggle.setAttribute(
+                    "aria-label",
+                    "Показать панель"
+                );
 
-    function toggleSidebar() {
+            } else {
 
-        const isOpen = sidebar.classList.toggle("mobile-open");
+                sidebarToggle.classList.remove("sidebar-hidden");
 
-        sidebarToggle.classList.toggle("active", isOpen);
+                sidebarToggle.textContent = "✕";
 
-        if (isOpen) {
+                sidebarToggle.setAttribute(
+                    "aria-label",
+                    "Скрыть панель"
+                );
+            }
 
-            sidebarToggle.textContent = "✕";
+        });
 
-            sidebarToggle.setAttribute(
-                "aria-label",
-                "Закрыть панель навигации"
-            );
-
-        } else {
-
-            sidebarToggle.textContent = "☰";
-
-            sidebarToggle.setAttribute(
-                "aria-label",
-                "Открыть панель навигации"
-            );
-        }
     }
-
-
-    sidebarToggle.addEventListener("click", toggleSidebar);
 
     // =================================
     // УНИВЕРСАЛЬНАЯ СИСТЕМА МОДАЛЬНЫХ ОКОН
