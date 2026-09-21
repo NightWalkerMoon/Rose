@@ -1029,9 +1029,15 @@ h2 {
 
     .hero {
         display: flex;
-
         flex-direction: column;
+
+        min-height: 100vh;
     }
+
+
+    /* ================================= */
+    /* ЦЕНТРАЛЬНЫЙ КОНТЕНТ */
+    /* ================================= */
 
     .content {
         position: static;
@@ -1044,12 +1050,16 @@ h2 {
         width: 100%;
         max-width: 100%;
 
-        padding: 60px 20px 20px;
+        padding: 60px 20px 100px;
+
+        flex: 1;
     }
+
 
     h1 {
         font-size: 40px;
     }
+
 
     h2 {
         font-size: 15px;
@@ -1057,15 +1067,31 @@ h2 {
         letter-spacing: 3px;
     }
 
+
     .content p {
         font-size: 17px;
     }
 
+
+    /* ================================= */
+    /* НИЖНЯЯ ПАНЕЛЬ */
+    /* ================================= */
+
     .sidebar {
-        position: static;
+        position: fixed;
+
+        left: 0;
+        bottom: 0;
+
+        top: auto;
+        right: auto;
 
         width: 100%;
         height: auto;
+
+        padding: 12px 10px;
+
+        display: flex;
 
         flex-direction: row;
 
@@ -1073,37 +1099,146 @@ h2 {
 
         justify-content: center;
 
-        gap: 10px;
+        align-items: center;
 
-        padding: 20px 15px;
+        gap: 8px;
+
+        background: rgba(70, 5, 50, 0.90);
+
+        backdrop-filter: blur(15px);
 
         border-left: none;
 
         border-top: 1px solid #d63384;
+
+        box-shadow:
+            0 -10px 40px rgba(214, 51, 132, 0.25);
+
+        z-index: 100;
+
+        /* Скрываем панель вниз */
+        transform: translateY(100%);
+
+        transition:
+            transform 0.4s ease,
+            opacity 0.4s ease;
+
+        opacity: 0;
     }
+
+
+    /* Панель открыта */
+
+    .sidebar.mobile-open {
+        transform: translateY(0);
+
+        opacity: 1;
+    }
+
+
+    /* ================================= */
+    /* ЛОГОТИП */
+    /* ================================= */
 
     .logo {
-        width: 100%;
-
-        margin-bottom: 10px;
-
-        font-size: 24px;
+        display: none;
     }
+
+
+    /* ================================= */
+    /* КНОПКИ ПАНЕЛИ */
+    /* ================================= */
 
     .nav-button {
+        flex: 1 1 0;
+
         width: auto;
 
-        flex: 1 1 auto;
+        min-width: 0;
 
-        font-size: 14px;
+        padding: 12px 6px;
 
-        padding: 12px 14px;
+        border-radius: 14px;
+
+        font-size: 13px;
+
+        white-space: nowrap;
     }
+
 
     .nav-button:hover,
     .nav-button:focus-visible {
         transform: none;
     }
+
+
+    /* ================================= */
+    /* КНОПКА ОТКРЫТИЯ ПАНЕЛИ */
+    /* ================================= */
+
+    .sidebar-toggle {
+        position: fixed;
+
+        right: 15px;
+        bottom: 15px;
+
+        width: 50px;
+        height: 50px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #d63384;
+
+        border-radius: 50%;
+
+        background: rgba(70, 5, 50, 0.90);
+
+        backdrop-filter: blur(10px);
+
+        color: #ffd6e9;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+        z-index: 110;
+
+        box-shadow:
+            0 0 15px rgba(214, 51, 132, 0.45);
+
+        transition:
+            transform 0.3s ease,
+            background 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+
+    .sidebar-toggle:hover {
+        transform: scale(1.08);
+
+        background: #a83272;
+
+        box-shadow:
+            0 0 15px #d63384,
+            0 0 30px #d63384;
+    }
+
+
+    /* ================================= */
+    /* КНОПКА КОГДА ПАНЕЛЬ ОТКРЫТА */
+    /* ================================= */
+
+    .sidebar-toggle.active {
+        bottom: 115px;
+    }
+
+
+    /* ================================= */
+    /* МОДАЛЬНЫЕ ОКНА */
+    /* ================================= */
 
     .cafe-menu,
     .about-window,
@@ -1114,17 +1249,21 @@ h2 {
         padding: 25px;
     }
 
+
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
 
     .coffee {
         flex-wrap: wrap;
     }
 
+
     .coffee-qty {
         margin-left: auto;
     }
+
 
     .cart-total,
     .cart-time {
