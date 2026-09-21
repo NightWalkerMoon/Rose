@@ -1345,3 +1345,9 @@ h2 {
         font-size: 18px;
     }
 }
+
+@media (max-width: 640px) {
+    body {
+        background: red !important;
+    }
+}
