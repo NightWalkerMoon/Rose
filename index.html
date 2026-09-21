@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rose Café</title>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- ================================= -->
+    <!-- Главный экран -->
+    <!-- ================================= -->
+
+    <main class="hero">
+
+        <!-- Летающие лепестки -->
+
+        <div class="petals"></div>
+
+
+        <!-- ================================= -->
+        <!-- Центральная часть сайта -->
+        <!-- ================================= -->
+
+        <section class="content">
+
+            <div class="rose">
+                🌹
+            </div>
+
+            <h1>
+                Rose Café
+            </h1>
+
+            <h2>
+                Taste the beauty.
+            </h2>
+
+            <p>
+                Место, где кофе встречается<br>
+                с атмосферой роз.
+            </p>
+
+            <!-- Кнопка открытия меню -->
+
+            <div class="menu-button" role="button" tabindex="0">
+                Посмотреть меню
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- ОКНО МЕНЮ -->
+        <!-- ================================= -->
+
+        <div class="menu-overlay"></div>
+
+        <div class="cafe-menu" role="dialog" aria-modal="true" aria-hidden="true">
+
+            <button class="close-menu" aria-label="Закрыть меню">
+                ×
+            </button>
+
+            <h2>
+                Наше меню
+            </h2>
+
+            <div class="coffee" data-name="Rose Latte" data-price="1500">
+                <div class="coffee-info">
+                    <span class="coffee-name">🌹 Rose Latte</span>
+                    <span class="coffee-price">1500 ₸</span>
+                </div>
+                <div class="coffee-qty">
+                    <button class="qty-btn minus" aria-label="Убавить Rose Latte">−</button>
+                    <span class="qty-value">0</span>
+                    <button class="qty-btn plus" aria-label="Добавить Rose Latte">+</button>
+                </div>
+            </div>
+
+            <div class="coffee" data-name="Cappuccino" data-price="1300">
+                <div class="coffee-info">
+                    <span class="coffee-name">☕ Cappuccino</span>
+                    <span class="coffee-price">1300 ₸</span>
+                </div>
+                <div class="coffee-qty">
+                    <button class="qty-btn minus" aria-label="Убавить Cappuccino">−</button>
+                    <span class="qty-value">0</span>
+                    <button class="qty-btn plus" aria-label="Добавить Cappuccino">+</button>
+                </div>
+            </div>
+
+            <div class="coffee" data-name="Rose Cheesecake" data-price="1900">
+                <div class="coffee-info">
+                    <span class="coffee-name">🍰 Rose Cheesecake</span>
+                    <span class="coffee-price">1900 ₸</span>
+                </div>
+                <div class="coffee-qty">
+                    <button class="qty-btn minus" aria-label="Убавить Rose Cheesecake">−</button>
+                    <span class="qty-value">0</span>
+                    <button class="qty-btn plus" aria-label="Добавить Rose Cheesecake">+</button>
+                </div>
+            </div>
+
+            <div class="coffee" data-name="Croissant" data-price="1000">
+                <div class="coffee-info">
+                    <span class="coffee-name">🥐 Croissant</span>
+                    <span class="coffee-price">1000 ₸</span>
+                </div>
+                <div class="coffee-qty">
+                    <button class="qty-btn minus" aria-label="Убавить Croissant">−</button>
+                    <span class="qty-value">0</span>
+                    <button class="qty-btn plus" aria-label="Добавить Croissant">+</button>
+                </div>
+            </div>
+
+            <!-- Итог заказа -->
+
+            <div class="cart-summary">
+
+                <div class="cart-row">
+                    <span class="cart-label">Итого:</span>
+                    <span class="cart-total">0 ₸</span>
+                </div>
+
+                <div class="cart-row">
+                    <span class="cart-label">⏱ Время ожидания:</span>
+                    <span class="cart-time">—</span>
+                </div>
+
+                <p class="cart-note">
+                    Корзина пуста — выберите что-нибудь вкусное
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- ОКНО "О НАС" -->
+        <!-- ================================= -->
+
+        <div class="about-overlay"></div>
+
+        <div class="about-window" role="dialog" aria-modal="true" aria-hidden="true">
+
+            <button class="close-about" aria-label="Закрыть окно">
+                ×
+            </button>
+
+            <div class="about-rose">
+                🌹
+            </div>
+
+            <h2>
+                О Rose Café
+            </h2>
+
+            <p>
+                Rose Café — уютное место,
+                где аромат свежего кофе
+                встречается с атмосферой роз.
+            </p>
+
+            <p>
+                Мы создаём спокойное пространство
+                для встреч, отдыха и приятных разговоров.
+            </p>
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- ОКНО ГАЛЕРЕИ -->
+        <!-- ================================= -->
+
+        <div class="gallery-overlay"></div>
+
+        <div class="gallery-window" role="dialog" aria-modal="true" aria-hidden="true">
+
+            <button class="close-gallery" aria-label="Закрыть галерею">
+                ×
+            </button>
+
+            <h2>
+                Галерея Rose Café
+            </h2>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Кофе">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Кафе">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb" alt="Интерьер">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24" alt="Кофейня">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Кофе">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0" alt="Кафе">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- ОКНО КОНТАКТОВ -->
+        <!-- ================================= -->
+
+        <div class="contacts-overlay"></div>
+
+        <div class="contacts-window" role="dialog" aria-modal="true" aria-hidden="true">
+
+            <button class="close-contacts" aria-label="Закрыть контакты">
+                ×
+            </button>
+
+            <div class="contacts-icon">
+                ✉
+            </div>
+
+            <h2>
+                Контакты
+            </h2>
+
+            <div class="contact-item">
+                <span>📍 Адрес</span>
+                <p>Rose Street, 15</p>
+            </div>
+
+            <div class="contact-item">
+                <span>☎ Телефон</span>
+                <p>+7 777 123 45 67</p>
+            </div>
+
+            <div class="contact-item">
+                <span>✉ Email</span>
+                <p>hello@rosecafe.kz</p>
+            </div>
+
+            <div class="contact-item">
+                <span>📱 Instagram</span>
+                <p>@rose.cafe</p>
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- ПРАВАЯ ПАНЕЛЬ -->
+        <!-- ================================= -->
+
+        <nav class="sidebar">
+
+            <div class="logo">
+                🌹
+                <span>
+                    Rose Café
+                </span>
+            </div>
+
+            <div class="nav-button" role="button" tabindex="0">
+                ⌂ Главная
+            </div>
+
+            <div class="nav-button menu-nav-button" role="button" tabindex="0">
+                ☕ Меню
+            </div>
+
+            <div class="nav-button about-nav-button" role="button" tabindex="0">
+                🌹 О нас
+            </div>
+
+            <div class="nav-button gallery-nav-button" role="button" tabindex="0">
+                ▧ Галерея
+            </div>
+
+            <div class="nav-button contacts-nav-button" role="button" tabindex="0">
+                ✉ Контакты
+            </div>
+
+        </nav>
+
+
+    </main>
+
+
+</body>
+
+</html>
